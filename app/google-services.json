@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "214398173921",
+    "firebase_url": "https://rumahkita-337a8.firebaseio.com",
+    "project_id": "rumahkita-337a8",
+    "storage_bucket": "rumahkita-337a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214398173921:android:efdeced987c44646",
+        "android_client_info": {
+          "package_name": "com.example.faturrahman.rumahkita"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214398173921-87j65qu90pa9mg5nhqqhdj1tib6f4g7q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.faturrahman.rumahkita",
+            "certificate_hash": "99982418ceb2d662268220bb065353a415633c18"
+          }
+        },
+        {
+          "client_id": "214398173921-p3qpedsv6sdi16d5i5c2tl1ohdiuel9m.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "214398173921-p3qpedsv6sdi16d5i5c2tl1ohdiuel9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQPZ3-Hc4r7a7LNFmeWN48E-3RmPJCeJE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214398173921-p3qpedsv6sdi16d5i5c2tl1ohdiuel9m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

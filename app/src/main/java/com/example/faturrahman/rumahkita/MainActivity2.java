@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita.Tab;
+package com.example.faturrahman.rumahkita;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
