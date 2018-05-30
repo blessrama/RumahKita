@@ -29,8 +29,10 @@ dependencies {
 
     final BUTTERKNIFE_VERSION = '8.4.0'
     final SUPPORT_LIBRARY_VERSION = '27.1.1'
-    final PLAY_SERVICES_VERSION = '10.2.1'
-    final FIREBASE_VERSION = '11.6.2'
+    final PLAY_SERVICES_VERSION = '15.0.1'
+    final FIREBASE_CORE_VERSION = '16.0.0'
+    final FIREBASE_VERSION = '16.0.1'
+
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -39,13 +41,13 @@ dependencies {
     implementation "com.google.android.gms:play-services-gcm:$PLAY_SERVICES_VERSION"
 
     //firebase implementation
-    implementation "com.google.firebase:firebase-core:$FIREBASE_VERSION"
+    implementation "com.google.firebase:firebase-core:$FIREBASE_CORE_VERSION"
     implementation "com.google.firebase:firebase-database:$FIREBASE_VERSION"
-    implementation "com.google.firebase:firebase-firestore:$FIREBASE_VERSION"
+    implementation "com.google.firebase:firebase-firestore:17.0.1"
     implementation "com.google.firebase:firebase-storage:$FIREBASE_VERSION"
     implementation "com.google.firebase:firebase-auth:$FIREBASE_VERSION"
-    implementation "com.google.firebase:firebase-messaging:$FIREBASE_VERSION"
-    implementation "com.google.firebase:firebase-invites:$FIREBASE_VERSION"
+    implementation "com.google.firebase:firebase-messaging:17.0.0"
+    implementation "com.google.firebase:firebase-invites:$FIREBASE_CORE_VERSION"
 
     //espresso implementation
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
