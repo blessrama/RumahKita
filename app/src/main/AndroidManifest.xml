@@ -16,12 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".login.signin.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".login.signup.SignUpActivity"
             android:label="@string/title_activity_sign_up"/>
         <activity
             android:name=".main.MainActivity2"

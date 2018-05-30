@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 import com.example.faturrahman.rumahkita.R;
 import com.example.faturrahman.rumahkita.Utils.FirebaseUtils;
-import com.example.faturrahman.rumahkita.login.LoginActivity;
+import com.example.faturrahman.rumahkita.login.signin.LoginActivity;
 import com.example.faturrahman.rumahkita.main.MainActivity2;
 import com.google.firebase.auth.FirebaseAuth;
 

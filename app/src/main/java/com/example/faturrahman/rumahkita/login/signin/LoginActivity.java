@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita.login;
+package com.example.faturrahman.rumahkita.login.signin;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.example.faturrahman.rumahkita.Utils.FirebaseUtils;
 import com.example.faturrahman.rumahkita.main.MainActivity2;
 import com.example.faturrahman.rumahkita.R;
-import com.example.faturrahman.rumahkita.SignUpActivity;
+import com.example.faturrahman.rumahkita.login.signup.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -70,11 +70,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void loginUser() {
         Log.d(TAG, "Login");
-
-//        if (!validate()) {
-//            onLoginFailed();
-//            return;
-//        }
 
         _loginButton.setEnabled(false);
 
