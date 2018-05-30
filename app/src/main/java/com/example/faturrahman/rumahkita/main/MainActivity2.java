@@ -131,6 +131,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void initiateBottomNavigation() {
         ShiftModeRemover.removeShiftMode(bottomNavigationView); //disable BottomNavigationView shift mode
+        ShiftModeRemover.resizeBottomNavIcon(bottomNavigationView, this); //resize icon size
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
