@@ -1,6 +1,8 @@
 package com.example.faturrahman.rumahkita.login.signin;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.faturrahman.rumahkita.utils.DialogFactory;
 import com.example.faturrahman.rumahkita.utils.FirebaseUtils;
 import com.example.faturrahman.rumahkita.main.MainActivity2;
 import com.example.faturrahman.rumahkita.R;
@@ -22,6 +25,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.link_signup) TextView _signupLink;
 
     FirebaseAuth firebaseAuth;
+    ProgressDialog progressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initActivity() {
         firebaseAuth = FirebaseUtils.getFirebaseAuth();
+
+        progressDialog = new ProgressDialog(LoginActivity.this);
 
         //enable loginUser button
         _loginButton.setOnClickListener(new View.OnClickListener() {
@@ -69,36 +77,49 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginUser() {
-        Log.d(TAG, "Login");
-
-        _loginButton.setEnabled(false);
-
-        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Authenticating...");
-        progressDialog.show();
-
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
 
-        // Implement your own authentication logic here.
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = firebaseAuth.getCurrentUser();
-                            _loginButton.setEnabled(true);
-                            startActivity(new Intent(LoginActivity.this, MainActivity2.class));
-                            finish();
-                        } else {
-                            Log.w(TAG,"signInWithEmail:failure", task.getException());
-                            Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-                            _loginButton.setEnabled(true);
+        //check if email or password is empty, if any of this empty, return alert dialog that state thi edit text is currently empty
+        if(!email.equals("") && !password.equals("")){
+            Log.d(TAG, "Login");
+
+            _loginButton.setEnabled(false);
+
+            DialogFactory.showProgressDialog(progressDialog, "Authenticating...");
+
+            // Implement your own authentication logic here.
+            firebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()){
+                                Log.d(TAG, "signInWithEmail:success");
+                                DialogFactory.cancelProgressDialog(progressDialog);
+                                _loginButton.setEnabled(true);
+                                startActivity(new Intent(LoginActivity.this, MainActivity2.class));
+                                finish();
+                            } else {
+                                Log.w(TAG,"signInWithEmail:failure", task.getException());
+                                DialogFactory.cancelProgressDialog(progressDialog);
+                                if(Objects.requireNonNull(task.getException()).getMessage().contains("no user record")){
+                                    Toast.makeText(getBaseContext(), "Login gagal, Akun tidak ditemukan!", Toast.LENGTH_LONG).show();
+                                }
+                                else if(Objects.requireNonNull(task.getException()).getMessage().contains("password is invalid")){
+                                    Toast.makeText(getBaseContext(), "Login gagal, Password salah!", Toast.LENGTH_LONG).show();
+                                }
+                                else {
+                                    Toast.makeText(getBaseContext(), "Login gagal, Jaringan bermasalah!", Toast.LENGTH_LONG).show();
+                                }
+                                _loginButton.setEnabled(true);
+                            }
                         }
-                    }
-                });
+                    });
+        }
+        else {
+            DialogFactory.showAlertDialog("Pastikan email dan password tidak kosong!", this);
+        }
+
     }
 
 
