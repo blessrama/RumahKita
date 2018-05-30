@@ -6,19 +6,19 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
 import com.example.faturrahman.rumahkita.Fragment.ChatFragment;
 import com.example.faturrahman.rumahkita.Fragment.HistoryFragment;
 import com.example.faturrahman.rumahkita.Fragment.HomeFragment;
 import com.example.faturrahman.rumahkita.Fragment.ProfileFragment;
-import com.example.faturrahman.rumahkita.R;
 import com.example.faturrahman.rumahkita.Utils.BottomNavigationViewHelper;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Faturrahman on 5/24/2018.
@@ -26,18 +26,28 @@ import com.example.faturrahman.rumahkita.Utils.BottomNavigationViewHelper;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
-    private ViewPager mViewPager;
-    private FrameLayout mFrameLayout;
-    private int prevMenuItem = -1;
+
+//    private ViewPager mViewPager;
+//    private int prevMenuItem = -1;
+
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.layout_bottom_nav)
+    BottomNavigationView bottomNavigationView;
+//    @BindView(R.id.frame_layout) FrameLayout mFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        prepareViewPager();
+        initiateBottomNavigation();
+        inflateInitialFragment();
+    }
+
+    private void prepareViewPager() {
 
 //        mViewPager = (ViewPager) findViewById(R.id.ViewPager);
 //        mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager(), this));
@@ -85,11 +95,16 @@ public class MainActivity2 extends AppCompatActivity {
 //            }
 //        });
 
-        mFrameLayout = (FrameLayout) findViewById(R.id.frame_layout);
+    }
 
+    private void inflateInitialFragment() {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.frame_layout, new HomeFragment());
+        ft.commit();
+    }
 
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.BottomView);
-        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);//disable BottomNavigationView shift mode
+    private void initiateBottomNavigation() {
+        BottomNavigationViewHelper.removeShiftMode(bottomNavigationView); //disable BottomNavigationView shift mode
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -122,13 +137,9 @@ public class MainActivity2 extends AppCompatActivity {
                 return true;
             }
         });
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.frame_layout, new HomeFragment());
-        ft.commit();
     }
 
-    void replaceFragment(Fragment fragment) {
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.replace(R.id.frame_layout, fragment);
