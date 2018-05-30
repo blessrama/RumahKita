@@ -15,7 +15,7 @@ import com.example.faturrahman.rumahkita.fragment.HistoryFragment;
 import com.example.faturrahman.rumahkita.fragment.HomeFragment;
 import com.example.faturrahman.rumahkita.fragment.ProfileFragment;
 import com.example.faturrahman.rumahkita.R;
-import com.example.faturrahman.rumahkita.utils.ShiftModeRemover;
+import com.example.faturrahman.rumahkita.utils.BottomNavigationUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -130,8 +130,8 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private void initiateBottomNavigation() {
-        ShiftModeRemover.removeShiftMode(bottomNavigationView); //disable BottomNavigationView shift mode
-        ShiftModeRemover.resizeBottomNavIcon(bottomNavigationView, this); //resize icon size
+        BottomNavigationUtils.removeShiftMode(bottomNavigationView); //disable BottomNavigationView shift mode
+        BottomNavigationUtils.resizeBottomNavIcon(bottomNavigationView, this); //resize icon size
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

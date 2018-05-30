@@ -17,7 +17,7 @@ import java.lang.reflect.Field;
  * Created by Faturrahman on 5/24/2018.
  */
 
-public class ShiftModeRemover {
+public class BottomNavigationUtils {
 
     @SuppressLint("RestrictedApi")
     public static void removeShiftMode(BottomNavigationView view) {
