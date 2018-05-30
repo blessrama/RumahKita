@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <android.support.design.widget.BottomNavigationView
-        android:id="@+id/BottomView"
+        android:id="@+id/layout_bottom_nav"
         android:background="#EEEEEE"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         android:id="@+id/frame_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/BottomView"
+        app:layout_constraintBottom_toTopOf="@id/layout_bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita.Tab;
+package com.example.faturrahman.rumahkita.tab;
 
 /**
  * Created by Ujang Wahyu on 24/01/2017.
