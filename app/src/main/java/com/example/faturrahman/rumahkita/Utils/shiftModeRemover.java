@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
  * Created by Faturrahman on 5/24/2018.
  */
 
-public class BottomNavigationViewHelper {
+public class shiftModeRemover {
 
     @SuppressLint("RestrictedApi")
     public static void removeShiftMode(BottomNavigationView view) {
