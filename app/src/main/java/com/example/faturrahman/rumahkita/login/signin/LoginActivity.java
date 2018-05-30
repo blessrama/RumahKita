@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.faturrahman.rumahkita.Utils.FirebaseUtils;
+import com.example.faturrahman.rumahkita.utils.FirebaseUtils;
 import com.example.faturrahman.rumahkita.main.MainActivity2;
 import com.example.faturrahman.rumahkita.R;
 import com.example.faturrahman.rumahkita.login.signup.SignUpActivity;

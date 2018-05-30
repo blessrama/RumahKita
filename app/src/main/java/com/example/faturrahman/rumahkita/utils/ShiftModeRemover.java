@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita.Utils;
+package com.example.faturrahman.rumahkita.utils;
 
 import android.annotation.SuppressLint;
 import android.support.design.internal.BottomNavigationItemView;
@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
  * Created by Faturrahman on 5/24/2018.
  */
 
-public class shiftModeRemover {
+public class ShiftModeRemover {
 
     @SuppressLint("RestrictedApi")
     public static void removeShiftMode(BottomNavigationView view) {

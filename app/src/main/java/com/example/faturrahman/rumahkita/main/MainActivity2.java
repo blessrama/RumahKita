@@ -10,12 +10,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.faturrahman.rumahkita.Fragment.ChatFragment;
-import com.example.faturrahman.rumahkita.Fragment.HistoryFragment;
-import com.example.faturrahman.rumahkita.Fragment.HomeFragment;
-import com.example.faturrahman.rumahkita.Fragment.ProfileFragment;
+import com.example.faturrahman.rumahkita.fragment.ChatFragment;
+import com.example.faturrahman.rumahkita.fragment.HistoryFragment;
+import com.example.faturrahman.rumahkita.fragment.HomeFragment;
+import com.example.faturrahman.rumahkita.fragment.ProfileFragment;
 import com.example.faturrahman.rumahkita.R;
-import com.example.faturrahman.rumahkita.Utils.shiftModeRemover;
+import com.example.faturrahman.rumahkita.utils.ShiftModeRemover;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -130,7 +130,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private void initiateBottomNavigation() {
-        shiftModeRemover.removeShiftMode(bottomNavigationView); //disable BottomNavigationView shift mode
+        ShiftModeRemover.removeShiftMode(bottomNavigationView); //disable BottomNavigationView shift mode
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

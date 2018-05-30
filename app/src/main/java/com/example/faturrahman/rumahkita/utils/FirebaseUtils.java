@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita.Utils;
+package com.example.faturrahman.rumahkita.utils;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita.Tab;
+package com.example.faturrahman.rumahkita.tab;
 
 /**
  * Created by Ujang Wahyu on 24/01/2017.
@@ -16,10 +16,10 @@ import android.text.Spanned;
 import android.text.style.ImageSpan;
 
 import com.example.faturrahman.rumahkita.R;
-import com.example.faturrahman.rumahkita.Fragment.ChatFragment;
-import com.example.faturrahman.rumahkita.Fragment.ProfileFragment;
-import com.example.faturrahman.rumahkita.Fragment.HistoryFragment;
-import com.example.faturrahman.rumahkita.Fragment.HomeFragment;
+import com.example.faturrahman.rumahkita.fragment.ChatFragment;
+import com.example.faturrahman.rumahkita.fragment.ProfileFragment;
+import com.example.faturrahman.rumahkita.fragment.HistoryFragment;
+import com.example.faturrahman.rumahkita.fragment.HomeFragment;
 
 /**
  * Created by Ujang Wahyu on 18/08/2016.
