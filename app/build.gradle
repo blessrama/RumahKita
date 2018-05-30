@@ -16,6 +16,7 @@ android {
         versionCode versionMajor * 1000 + versionMinor * 100 + versionPatch
         versionName String.format("%s.%s.%s", versionMajor, versionMinor, versionPatch)
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
