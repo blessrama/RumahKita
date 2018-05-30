@@ -42,7 +42,6 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.link_signup) TextView _signupLink;
 
     FirebaseAuth firebaseAuth;
-    ProgressDialog progressDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,8 +53,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void initActivity() {
         firebaseAuth = FirebaseUtils.getFirebaseAuth();
-
-        progressDialog = new ProgressDialog(LoginActivity.this);
 
         //enable loginUser button
         _loginButton.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
 
             _loginButton.setEnabled(false);
 
-            DialogFactory.showProgressDialog(progressDialog, "Authenticating...");
+            final ProgressDialog progressDialog = DialogFactory.showProgressDialog("Authenticating...", this);
 
             // Implement your own authentication logic here.
             firebaseAuth.signInWithEmailAndPassword(email, password)

@@ -40,7 +40,6 @@ public class SignUpActivity extends AppCompatActivity {
     @BindView(R.id.link_login) TextView _loginLink;
 
     FirebaseAuth firebaseAuth;
-    ProgressDialog progressDialog;
 
 
     @Override
@@ -53,8 +52,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void initActivity() {
         firebaseAuth = FirebaseUtils.getFirebaseAuth();
-
-        progressDialog = new ProgressDialog(this);
 
         _signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +81,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 _signupButton.setEnabled(false);
 
-                DialogFactory.showProgressDialog(progressDialog, "Creating Account...");
+                final ProgressDialog progressDialog = DialogFactory.showProgressDialog("Creating Account...", this);
 
                 // Implement your own signup logic here.
                 firebaseAuth.createUserWithEmailAndPassword(email, password)

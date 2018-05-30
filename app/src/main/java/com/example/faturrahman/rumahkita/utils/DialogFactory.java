@@ -21,10 +21,12 @@ public class DialogFactory {
         dialog.show();
     }
 
-    public static void showProgressDialog(ProgressDialog progressDialog, String message){
+    public static ProgressDialog showProgressDialog(String message, Context context){
+        ProgressDialog progressDialog = new ProgressDialog(context);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage(message);
         progressDialog.show();
+        return progressDialog;
     }
 
     public static void cancelProgressDialog(ProgressDialog progressDialog){
