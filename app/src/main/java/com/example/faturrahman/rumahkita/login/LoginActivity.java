@@ -1,4 +1,4 @@
-package com.example.faturrahman.rumahkita;
+package com.example.faturrahman.rumahkita.login;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -13,6 +13,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.faturrahman.rumahkita.Utils.FirebaseUtils;
+import com.example.faturrahman.rumahkita.main.MainActivity2;
+import com.example.faturrahman.rumahkita.R;
+import com.example.faturrahman.rumahkita.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -39,20 +43,22 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        firebaseAuth = FirebaseAuth.getInstance();
+        initActivity();
+    }
 
+    private void initActivity() {
+        firebaseAuth = FirebaseUtils.getFirebaseAuth();
 
-
+        //enable loginUser button
         _loginButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                login();
+                loginUser();
             }
         });
 
+        //enable sign up label
         _signupLink.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
@@ -62,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void login() {
+    public void loginUser() {
         Log.d(TAG, "Login");
 
 //        if (!validate()) {
@@ -98,16 +104,6 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-
-//        new android.os.Handler().postDelayed(
-//                new Runnable() {
-//                    public void run() {
-//                        // On complete call either onLoginSuccess or onLoginFailed
-//                        onLoginSuccess();
-//                        // onLoginFailed();
-//                        progressDialog.dismiss();
-//                    }
-//                }, 3000);
     }
 
 
