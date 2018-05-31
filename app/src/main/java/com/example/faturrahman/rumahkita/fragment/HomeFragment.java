@@ -7,11 +7,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.faturrahman.rumahkita.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 public class HomeFragment extends Fragment {
+
+    @BindView(R.id.view_electric)
+    LinearLayout llElectric;
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -22,9 +31,16 @@ public class HomeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
+
+    }
+
+    @OnClick(R.id.view_electric)
+    public void ElectricMenu(){
 
     }
 }

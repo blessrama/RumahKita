@@ -64,6 +64,7 @@
                 android:text="Semua Layanan" />
 
             <LinearLayout
+                android:id="@+id/view_electric"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
