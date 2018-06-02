@@ -4,7 +4,7 @@
         <shape android:shape="rectangle">
             <solid android:color="@color/LightGrey"/>
             <!--corners allow us to make the rounded corners button-->
-            <corners android:radius="10dp" />
+            <corners android:radius="8dp" />
         </shape>
     </item>
 </selector>
