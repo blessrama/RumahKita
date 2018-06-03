@@ -71,6 +71,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/profil_nama_user"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -81,6 +82,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/profil_email_user"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start"
@@ -107,6 +109,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/profil_user_jumlah_kontrak_selesai"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start"
@@ -138,6 +141,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/profil_user_jumlah_kontrak_berjalan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -179,6 +183,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/profil_no_telepon_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
@@ -211,6 +216,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/profil_alamat_rumah_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
@@ -245,6 +251,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/profil_deskripsi_user"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start"
