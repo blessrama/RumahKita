@@ -146,9 +146,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.e(TAG, "signInWithEmail:failure", databaseError.toException());
                 DialogFactory.cancelProgressDialog(progressDialog);
-
                 Toast.makeText(getBaseContext(), "Login gagal, Jaringan bermasalah!", Toast.LENGTH_LONG).show();
-
                 _loginButton.setEnabled(true);
             }
         });
