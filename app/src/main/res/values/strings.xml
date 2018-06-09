@@ -20,4 +20,6 @@
         completions."
     </string>
     <string name="title_activity_sign_up">Sign Up</string>
+    <string name="hint_search">Cari Alamat</string>
+    <string name="hint_range">Rentang Harga</string>
 </resources>
