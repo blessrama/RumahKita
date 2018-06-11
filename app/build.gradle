@@ -33,7 +33,8 @@ dependencies {
     final PLAY_SERVICES_VERSION = '15.0.1'
     final FIREBASE_CORE_VERSION = '16.0.0'
     final FIREBASE_VERSION = '16.0.1'
-
+    final RX_BINDING_VERSION = '2.1.1'
+    def daggerCompiler = "com.google.dagger:dagger-compiler:2.16"
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -64,10 +65,31 @@ dependencies {
     implementation "com.android.support:support-v4:$SUPPORT_LIBRARY_VERSION"
     implementation "com.android.support:support-vector-drawable:$SUPPORT_LIBRARY_VERSION"
 
+
+    //rx binding implementation
+    implementation "com.jakewharton.rxbinding2:rxbinding:$RX_BINDING_VERSION"
+
     //butterknife implementation
     implementation "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
     annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
 
+    //rxjava & rx android implementation
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.3.4'
+
+    //junit implementation
     testImplementation 'junit:junit:4.12'
+
+    //javax annotation engine
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+
+    //dagger implementation
+    implementation "com.google.dagger:dagger:2.16"
+    annotationProcessor daggerCompiler
+    testAnnotationProcessor daggerCompiler
+    androidTestAnnotationProcessor daggerCompiler
+
+    //gson implementation
+    implementation 'com.google.code.gson:gson:2.8.1'
 }
 apply plugin: 'com.google.gms.google-services'
