@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.faturrahman.rumahkita.features.activity_elektrik_kita">
+    tools:context="com.example.faturrahman.rumahkita.elektrikkita.activity_elektrik_kita">
 
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lokasi Kerja"
+                    android:text="Alamat Kerja"
                     android:layout_marginBottom="5dp"/>
 
 
@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pilih Jenis Kerja"/>
+                    android:text="Jenis Kerja"/>
 
 
                 <LinearLayout
@@ -108,7 +108,7 @@
                         android:padding="4dp"
                         android:background="@drawable/tombol_bulet"
                         android:textColor="@color/white"
-                        android:text="Kecil" />
+                        android:text="Harian" />
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/btn_whole"
@@ -120,19 +120,7 @@
                         android:padding="4dp"
                         android:background="@drawable/tombol_bulet"
                         android:textColor="@color/white"
-                        android:text="Sedang" />
-
-                    <android.support.v7.widget.AppCompatButton
-                        android:id="@+id/btn_apaya"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:padding="4dp"
-                        android:background="@drawable/tombol_bulet"
-                        android:textColor="@color/white"
-                        android:text="Besar" />
+                        android:text="Borongan" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -172,6 +160,61 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Volume Kerja"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_freelance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/tombol_bulet"
+                        android:textColor="@color/white"
+                        android:text="Kecil" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_whole"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/tombol_bulet"
+                        android:textColor="@color/white"
+                        android:text="Sedang" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btn_apaya"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/tombol_bulet"
+                        android:textColor="@color/white"
+                        android:text="Besar" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Durasi Kontrak"
                     android:layout_marginBottom="10dp"/>
 
@@ -196,12 +239,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rentang Tarif"/>
+                    android:text="@string/hint_range"/>
 
                 <Spinner
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:autofillHints="@string/hint_range">
+                    android:layout_height="40dp">
 
                 </Spinner>
 

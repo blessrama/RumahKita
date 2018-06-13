@@ -25,10 +25,9 @@
         <activity
             android:name=".main.MainActivity2"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
         <activity
@@ -40,8 +39,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".features.activity_elektrik_kita" />
-        <activity android:name=".features.activity_taman_kita"></activity>
+        <activity android:name=".elektrikkita.activity_elektrik_kita" />
+        <activity android:name=".tamankita.activity_taman_kita" />
+        <activity android:name=".main.activity_choose_worker" />
+        <activity android:name=".main.activity_confirm_order" />
+        <activity android:name=".elektrikkita.activity_summary_elektrikkita" />
+        <activity android:name=".tamankita.activity_summary_tamankita" />
+        <activity android:name=".intro.activity_loading_service"></activity>
     </application>
 
 </manifest>
