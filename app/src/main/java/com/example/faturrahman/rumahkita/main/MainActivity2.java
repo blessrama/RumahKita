@@ -1,6 +1,6 @@
 package com.example.faturrahman.rumahkita.main;
 
-import android.os.Bundle;
+import  android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
