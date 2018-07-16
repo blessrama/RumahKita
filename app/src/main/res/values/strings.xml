@@ -23,4 +23,5 @@
     <string name="hint_search">Cari Alamat</string>
     <string name="hint_range">Rentang Harga</string>
     <string name="title_activity_confirm_elektrikkita">activity_confirm_elektrikkita</string>
+    <string name="title_activity_worker_list_map">Map</string>
 </resources>
