@@ -67,7 +67,8 @@
                     android:layout_marginBottom="4dp"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.SearchView xmlns:android="http://schemas.android.com/apk/res/android"
+                    <android.support.v7.widget.SearchView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
                         android:id="@+id/search"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -106,7 +107,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:padding="4dp"
-                        android:background="@drawable/tombol_bulet"
+                        android:background="@drawable/tombol_bulet_state"
                         android:textColor="@color/white"
                         android:text="Harian" />
 
@@ -118,7 +119,7 @@
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:padding="4dp"
-                        android:background="@drawable/tombol_bulet"
+                        android:background="@drawable/tombol_bulet_state"
                         android:textColor="@color/white"
                         android:text="Borongan" />
 
@@ -142,6 +143,8 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:padding="10dp"
+                    android:layout_gravity="top"
                     android:background="@drawable/hiasan_abu2"
                     >
 
@@ -175,7 +178,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
-                        android:background="@drawable/tombol_bulet"
+                        android:background="@drawable/tombol_bulet_state"
                         android:textColor="@color/white"
                         android:text="Kecil" />
 
@@ -186,7 +189,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
-                        android:background="@drawable/tombol_bulet"
+                        android:background="@drawable/tombol_bulet_state"
                         android:textColor="@color/white"
                         android:text="Sedang" />
 
@@ -197,7 +200,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
-                        android:background="@drawable/tombol_bulet"
+                        android:background="@drawable/tombol_bulet_state"
                         android:textColor="@color/white"
                         android:text="Besar" />
 
@@ -215,7 +218,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Durasi Kontrak"
+                    android:text="Durasi Kerja"
                     android:layout_marginBottom="10dp"/>
 
                 <android.support.design.widget.TextInputEditText
