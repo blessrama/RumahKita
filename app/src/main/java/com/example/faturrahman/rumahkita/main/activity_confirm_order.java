@@ -10,6 +10,6 @@ public class activity_confirm_order extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirm_order_elektrikkita);
+        setContentView(R.layout.activity_confirm_order);
     }
 }
